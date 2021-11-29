@@ -25,10 +25,15 @@ def contact(request):
         messages.success(request, 'Your messages has been sent!')
     return render(request,'contact.html',data)
 
-def services(request):
+def shop(request):
     if request.user.is_anonymous:
         return redirect("/signin")
-    return render(request,'services.html',data)
+    return render(request,'shop.html',data)
+
+def orders(request):
+    if request.user.is_anonymous:
+        return redirect("/signin")
+    return render(request,'orders.html',data)
 
 def signin(request):
     if request.method=="POST":
